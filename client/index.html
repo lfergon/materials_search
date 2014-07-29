@@ -1,0 +1,68 @@
+<template name="index">
+  <div class="input-group" style="margin:1em 1em 0 1em;">
+    <input type="text" class="form-control" style="padding:1em; font-size: 120%; color:black; padding:0em 1em 0em 1em; height:2em; border: 1px solid #aaa; border-radius: 0;" placeholder="Search content" id="search"/>
+    <span class="input-group-addon">
+      <span class="glyphicon glyphicon-search" style="cursor:pointer;"></span>
+    </span> 
+  </div>
+  <div style='padding-bottom: 2em;' class='clearfix'></div>
+  <table id="startups" class='table table-ranked table-hover table-stripped' style='font-size:0.7em; padding-top:1em; -webkit-animation-duration: 500ms; -moz-animation-duration:500ms; animation-duration: 500ms;'>
+    <thead>
+      <tr>
+        <th>
+          <div name="title" class="sortColumn" style="cursor:pointer;">
+            <span class='glyphicon glyphicon-sort pull-right'></span><span class="pull-left">Title</span>
+          </div>
+        </th>
+        <th>
+          <div name="first_author" class="sortColumn" style="white-space: nowrap; cursor:pointer;">
+            <span class='glyphicon glyphicon-sort pull-right'></span><span class="pull-left">First author</span>
+          </div>
+        </th>
+        <th>
+          <div name="solid_state" class="sortColumn" style="white-space: nowrap; cursor:pointer;">
+            <span class='glyphicon glyphicon-sort pull-right'></span><span class="pull-left">Solid state reaction</span>
+          </div>
+        </th>
+        <th>
+          <div name="max_temperature_experimental" class="sortColumn" style="white-space: nowrap; cursor:pointer;">
+            <span class='glyphicon glyphicon-sort pull-right'></span><span class="pull-left">Highest temperature (ºC)</span>
+          </div>
+        </th>
+        <th>
+          <div name="doi_link" class="sortColumn" style="white-space: nowrap; cursor:pointer;">
+            <span class='glyphicon glyphicon-sort pull-right'></span><span class="pull-left">Link</span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each this.content}}
+        <tr>
+          <td style='font-weight:700; text-align:left; max-width: 10em;'>
+            {{title}}
+          </td>
+          <td style='font-weight:700; text-align:left;'>
+            {{first_author}}
+          </td>
+          <td style='font-weight:700; text-align:left;'>
+            {{solid_state}}
+          </td>
+          <td style='font-weight:700; text-align:left;'>
+            {{max_temperature_experimental}}
+          </td>
+          <td style='font-weight:700; text-align:left;'>
+            <a href="{{doi_link}}" style="cursor: pointer;">More info</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{#if searching}}
+    <div class='row' style='margin-top:2em;'>
+      
+    </div>
+  {{/if}}
+  <br><br> <!-- Keep this instead of a padding later to have some space on mobile -->
+</template>
+ 
