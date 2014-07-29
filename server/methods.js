@@ -1,5 +1,6 @@
 Meteor.methods({
   searchContent: function (valueToSearch) {
-    return ContentTable.find({title: {$regex: valueToSearch, $options: "i"}}, {sort: {createdAt:-1}}).fetch();
+  	Log.error(ContentTable.find({materials_experimental: {$regex: valueToSearch, $options: "i"}}, {sort: {createdAt:-1}}).fetch());
+    return ContentTable.find({materials_experimental: {$regex: valueToSearch, $options: "i"}}, {sort: {createdAt:-1}}).fetch();
   }
 });
