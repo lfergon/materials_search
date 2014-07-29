@@ -34,6 +34,16 @@
             <span class='glyphicon glyphicon-sort pull-right'></span><span class="pull-left">Link</span>
           </div>
         </th>
+        <th>
+          <div name="materials">
+            <span class='glyphicon glyphicon-sort pull-right'></span><span class="pull-left">Materials</span>
+          </div>
+        </th>
+        <th>
+          <div name="precursors">
+            <span class='glyphicon glyphicon-sort pull-right'></span><span class="pull-left">Precursors</span>
+          </div>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -53,6 +63,12 @@
           </td>
           <td style='font-weight:700; text-align:left;'>
             <a href="{{doi_link}}" style="cursor: pointer;">More info</a>
+          </td>
+          <td style='font-weight:700; text-align:left;'>
+            {{materials materials_experimental}}
+          </td>
+          <td style='font-weight:700; text-align:left;'>
+            {{precursors precursors_experimental}}
           </td>
         </tr>
       {{/each}}
